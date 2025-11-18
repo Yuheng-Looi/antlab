@@ -1,0 +1,83 @@
+id: IOSvL2
+boot:
+  timeout: 30
+  completed:
+    - Press RETURN to get started!
+  uses_regex: false
+sim:
+  linux_native:
+    libvirt_domain_driver: kvm
+    driver: iosvl2
+    disk_driver: virtio
+    ram: 1024
+    cpus: 1
+    cpu_limit: 100
+    nic_driver: e1000
+general:
+  nature: switch
+  description: Cisco IOSvL2
+  read_only: true
+configuration:
+  generator:
+    driver: iosvl2
+device:
+  interfaces:
+    serial_ports: 1
+    physical:
+      - GigabitEthernet0/0
+      - GigabitEthernet0/1
+      - GigabitEthernet0/2
+      - GigabitEthernet0/3
+      - GigabitEthernet1/0
+      - GigabitEthernet1/1
+      - GigabitEthernet1/2
+      - GigabitEthernet1/3
+      - GigabitEthernet2/0
+      - GigabitEthernet2/1
+      - GigabitEthernet2/2
+      - GigabitEthernet2/3
+      - GigabitEthernet3/0
+      - GigabitEthernet3/1
+      - GigabitEthernet3/2
+      - GigabitEthernet3/3
+      - GigabitEthernet4/0
+      - GigabitEthernet4/1
+      - GigabitEthernet4/2
+      - GigabitEthernet4/3
+      - GigabitEthernet5/0
+      - GigabitEthernet5/1
+      - GigabitEthernet5/2
+      - GigabitEthernet5/3
+      - GigabitEthernet6/0
+      - GigabitEthernet6/1
+      - GigabitEthernet6/2
+      - GigabitEthernet6/3
+      - GigabitEthernet7/0
+      - GigabitEthernet7/1
+      - GigabitEthernet7/2
+      - GigabitEthernet7/3
+    has_loopback_zero: true
+    min_count: 4
+    default_count: 4
+    loopback:
+      - Loopback0
+ui:
+  label_prefix: iosv-l2-
+  icon: switch
+  label: IOSvL2
+  visible: true
+  description: IOSvL2
+inherited:
+  image:
+    ram: true
+    cpus: false
+    data_volume: false
+    boot_disk_size: false
+    cpu_limit: true
+  node:
+    ram: true
+    cpus: false
+    data_volume: false
+    boot_disk_size: false
+    cpu_limit: true
+schema_version: 0.0.1
